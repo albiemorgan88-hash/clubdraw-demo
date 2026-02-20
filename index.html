@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClubDraw — Ardmore Cricket Club</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{club:'#1a6d3a',clubLight:'#2d9254',clubDark:'#145a2e',brand:'#1e293b',brandLight:'#475569'}}}}</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+body{font-family:'Inter',sans-serif}
+.ball{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.25rem;color:#fff;background:linear-gradient(145deg,#1a6d3a,#2d9254);box-shadow:inset -2px -4px 6px rgba(0,0,0,.25),2px 4px 8px rgba(0,0,0,.15)}
+.ball-sm{width:40px;height:40px;font-size:.9rem}
+.num-cell{transition:all .15s}
+.num-cell.selected{background:#1a6d3a!important;color:#fff!important;transform:scale(1.08);box-shadow:0 2px 8px rgba(26,109,58,.4)}
+.num-cell:hover{background:#e2e8f0}
+.fade-in{animation:fadeIn .6s ease-out}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- Nav -->
+<nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+<div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-brand flex items-center justify-center text-white font-bold text-sm">CD</div>
+<span class="font-bold text-lg text-brand">ClubDraw</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-sm text-gray-500 hidden sm:inline">Ardmore Cricket Club</span>
+<div class="w-8 h-8 rounded-full bg-club flex items-center justify-center text-white text-xs font-bold">ACC</div>
+</div>
+</div>
+</nav>
+
+<!-- Hero -->
+<section class="bg-gradient-to-br from-club to-clubDark text-white py-20 px-4">
+<div class="max-w-3xl mx-auto text-center fade-in">
+<h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Your Club's Weekly Draw,<br>Simplified</h1>
+<p class="text-lg sm:text-xl opacity-90 mb-8">Pick your numbers. Support your club. Win your share of the pot.</p>
+<div class="inline-flex items-center gap-3 bg-white/15 backdrop-blur rounded-full px-6 py-3">
+<span class="text-2xl font-bold">£247</span>
+<span class="opacity-80">this week's pot</span>
+</div>
+</div>
+</section>
+
+<!-- How It Works -->
+<section class="py-16 px-4">
+<div class="max-w-4xl mx-auto">
+<h2 class="text-2xl font-bold text-center mb-12">How It Works</h2>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="text-center">
+<div class="w-14 h-14 rounded-full bg-club/10 text-club flex items-center justify-center mx-auto mb-4 text-2xl font-bold">1</div>
+<h3 class="font-semibold text-lg mb-2">Pick Your Numbers</h3>
+<p class="text-gray-500">Choose 5 numbers from 1–50. Your numbers stay the same each week.</p>
+</div>
+<div class="text-center">
+<div class="w-14 h-14 rounded-full bg-club/10 text-club flex items-center justify-center mx-auto mb-4 text-2xl font-bold">2</div>
+<h3 class="font-semibold text-lg mb-2">Pay Weekly</h3>
+<p class="text-gray-500">Just £1 per number per week. Cancel anytime. Direct debit or card.</p>
+</div>
+<div class="text-center">
+<div class="w-14 h-14 rounded-full bg-club/10 text-club flex items-center justify-center mx-auto mb-4 text-2xl font-bold">3</div>
+<h3 class="font-semibold text-lg mb-2">Win Your Share</h3>
+<p class="text-gray-500">Match the winning numbers drawn every Friday. Pot splits between winners.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Live Draw -->
+<section class="bg-white py-16 px-4">
+<div class="max-w-3xl mx-auto text-center">
+<p class="text-sm font-medium text-club uppercase tracking-wide mb-2">This Week's Draw — Fri 20 Feb 2026</p>
+<h2 class="text-2xl font-bold mb-8">Winning Numbers</h2>
+<div class="flex justify-center gap-3 sm:gap-4 mb-8 flex-wrap">
+<div class="ball">7</div>
+<div class="ball">13</div>
+<div class="ball">24</div>
+<div class="ball">31</div>
+<div class="ball">42</div>
+</div>
+<div class="inline-block bg-club/5 rounded-xl px-8 py-5 mb-8">
+<p class="text-3xl font-extrabold text-club">£247</p>
+<p class="text-sm text-gray-500">Total Pot</p>
+</div>
+<h3 class="font-semibold mb-4">🎉 This Week's Winners</h3>
+<div class="grid sm:grid-cols-2 gap-3 max-w-md mx-auto text-left">
+<div class="bg-gray-50 rounded-lg px-4 py-3 flex justify-between"><span>Sarah M.</span><span class="font-semibold text-club">5/5 — £148</span></div>
+<div class="bg-gray-50 rounded-lg px-4 py-3 flex justify-between"><span>James O.</span><span class="font-semibold text-club">4/5 — £49</span></div>
+<div class="bg-gray-50 rounded-lg px-4 py-3 flex justify-between"><span>Roisin K.</span><span class="font-semibold text-club">4/5 — £25</span></div>
+<div class="bg-gray-50 rounded-lg px-4 py-3 flex justify-between"><span>David T.</span><span class="font-semibold text-club">3/5 — £15</span></div>
+<div class="bg-gray-50 rounded-lg px-4 py-3 flex justify-between"><span>Emma C.</span><span class="font-semibold text-club">3/5 — £10</span></div>
+</div>
+</div>
+</section>
+
+<!-- Number Picker -->
+<section class="py-16 px-4">
+<div class="max-w-2xl mx-auto">
+<h2 class="text-2xl font-bold text-center mb-2">Pick Your Numbers</h2>
+<p class="text-center text-gray-500 mb-6">Select 5 numbers from the grid below</p>
+<div class="text-center mb-4">
+<span class="text-sm font-medium text-gray-600">Selected: </span>
+<span id="count" class="font-bold text-club">0</span><span class="text-sm text-gray-600"> / 5</span>
+<div id="selectedBalls" class="flex justify-center gap-2 mt-3 min-h-[44px] flex-wrap"></div>
+</div>
+<div id="grid" class="grid grid-cols-10 gap-2 sm:gap-2.5 mb-6"></div>
+<div class="text-center">
+<button onclick="alert('This is a demo — sign up coming soon!')" class="bg-club hover:bg-clubDark text-white font-semibold px-8 py-3 rounded-full transition">Confirm Numbers →</button>
+</div>
+</div>
+</section>
+
+<!-- Results History -->
+<section class="bg-white py-16 px-4">
+<div class="max-w-3xl mx-auto">
+<h2 class="text-2xl font-bold text-center mb-8">Recent Results</h2>
+<div class="overflow-x-auto">
+<table class="w-full text-sm">
+<thead><tr class="border-b text-left text-gray-500">
+<th class="pb-3 pr-4">Date</th><th class="pb-3 pr-4">Winning Numbers</th><th class="pb-3 pr-4">Pot</th><th class="pb-3">Winners</th>
+</tr></thead>
+<tbody id="results" class="divide-y"></tbody>
+</table>
+</div>
+</div>
+</section>
+
+<!-- Club Branding -->
+<section class="py-16 px-4 bg-gradient-to-br from-club/5 to-transparent">
+<div class="max-w-3xl mx-auto text-center">
+<div class="w-20 h-20 rounded-full bg-club flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold">ACC</div>
+<h2 class="text-2xl font-bold mb-2">Ardmore Cricket Club</h2>
+<p class="text-gray-500 mb-1">Weekly Draw — Supporting the club since 2026</p>
+<p class="text-xs text-gray-400">Powered by <span class="font-semibold text-brand">ClubDraw</span></p>
+</div>
+</section>
+
+<!-- Admin Preview -->
+<section class="bg-white py-16 px-4">
+<div class="max-w-3xl mx-auto">
+<h2 class="text-2xl font-bold text-center mb-2">Club Admin Dashboard</h2>
+<p class="text-center text-gray-500 mb-8 text-sm">What your club committee sees each week</p>
+<div class="grid sm:grid-cols-4 gap-4">
+<div class="bg-gray-50 rounded-xl p-5 text-center">
+<p class="text-2xl font-bold text-brand">94</p><p class="text-xs text-gray-500 mt-1">Active Members</p>
+</div>
+<div class="bg-gray-50 rounded-xl p-5 text-center">
+<p class="text-2xl font-bold text-brand">£247</p><p class="text-xs text-gray-500 mt-1">Weekly Pot</p>
+</div>
+<div class="bg-gray-50 rounded-xl p-5 text-center">
+<p class="text-2xl font-bold text-red-400">-£12.35</p><p class="text-xs text-gray-500 mt-1">Platform Fee (5%)</p>
+</div>
+<div class="bg-gray-50 rounded-xl p-5 text-center">
+<p class="text-2xl font-bold text-club">£234.65</p><p class="text-xs text-gray-500 mt-1">Net to Club</p>
+</div>
+</div>
+<div class="mt-6 bg-club/5 rounded-lg p-4 text-center text-sm text-gray-600">
+60% to prize pot · 40% to club funds · Fully transparent breakdown each week
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="py-20 px-4 bg-gradient-to-br from-brand to-gray-800 text-white text-center">
+<div class="max-w-2xl mx-auto">
+<h2 class="text-3xl font-bold mb-4">Want ClubDraw for Your Club?</h2>
+<p class="opacity-80 mb-8">Works for GAA, rugby, cricket, soccer — any sports club. Set up in minutes.</p>
+<a href="mailto:hello@clubdraw.io" class="inline-block bg-white text-brand font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition">Get in Touch →</a>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-400 text-center py-6 text-xs">
+<p>© 2026 ClubDraw · Demo Site · <span class="text-gray-500">Not a real draw</span></p>
+</footer>
+
+<script>
+// Number picker
+const grid=document.getElementById('grid'),selected=new Set();
+for(let i=1;i<=50;i++){const c=document.createElement('div');c.className='num-cell bg-gray-100 rounded-lg py-2 text-center cursor-pointer font-semibold text-sm select-none';c.textContent=i;c.onclick=()=>{if(selected.has(i)){selected.delete(i);c.classList.remove('selected')}else if(selected.size<5){selected.add(i);c.classList.add('selected')}updateSelected()};grid.appendChild(c)}
+function updateSelected(){document.getElementById('count').textContent=selected.size;const b=document.getElementById('selectedBalls');b.innerHTML='';[...selected].sort((a,c)=>a-c).forEach(n=>{const d=document.createElement('div');d.className='ball ball-sm';d.textContent=n;b.appendChild(d)})}
+
+// Results table
+const results=[
+{date:'13 Feb 2026',nums:[3,18,22,37,45],pot:'£231',winners:4},
+{date:'6 Feb 2026',nums:[8,11,29,33,50],pot:'£218',winners:3},
+{date:'30 Jan 2026',nums:[2,14,27,36,41],pot:'£252',winners:5},
+{date:'23 Jan 2026',nums:[6,19,25,38,47],pot:'£209',winners:2},
+];
+const tbody=document.getElementById('results');
+results.forEach(r=>{const tr=document.createElement('tr');tr.innerHTML=`<td class="py-3 pr-4 whitespace-nowrap">${r.date}</td><td class="py-3 pr-4"><div class="flex gap-1.5">${r.nums.map(n=>`<span class="ball ball-sm !w-8 !h-8 !text-xs">${n}</span>`).join('')}</div></td><td class="py-3 pr-4 font-semibold">${r.pot}</td><td class="py-3">${r.winners} winners</td>`;tbody.appendChild(tr)});
+</script>
+</body>
+</html>
